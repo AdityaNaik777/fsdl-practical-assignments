@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Formatting Library - Full Version</title>
+    <style>
+        :root {
+            --forest-dark: #5e8c81;   /* Shade 1: Deep Text */
+            --emerald: #10b981;       /* Shade 2: Primary */
+            --leaf: #059669;          /* Shade 3: Accents */
+            --mint: #a7f3d0;          /* Shade 4: Highlights */
+            --sage: #f0fdf4;          /* Shade 5: BG */
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(6, 78, 59, 0.1);
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #a8d1c3 0%, #8ee6cd 100%);
+            color: var(--forest-dark);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            border-bottom: 5px solid var(--emerald);
+        }
+
+        @keyframes rotateLogo { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .logo {
+            font-size: 3.5rem;
+            color: var(--emerald);
+            display: inline-block;
+            animation: rotateLogo 12s linear infinite;
+            margin-bottom: 10px;
+        }
+
+        .table-container {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        table { width: 100%; border-collapse: collapse; }
+
+        thead { background: var(--forest-dark); color: white; }
+
+        th { padding: 20px; text-align: left; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+        tbody tr { 
+          background-color: #ffffff; /* Clean white for all rows */
+          border-bottom: 1px solid #e2e8f0; 
+          transition: 0.3s; 
+        }
+
+        tbody tr:hover { 
+            background-color: #f0fdf4; /* Very light green on hover */
+        }
+        tbody tr:nth-child(even) { background: #f9fefb; }
+        tbody tr:hover { background: var(--mint); }
+
+        td { padding: 18px 20px; vertical-align: middle; }
+
+        .tag-pill {
+            background: var(--leaf);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .example-box {
+            background: var(--sage);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid var(--emerald);
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        blockquote {
+            background: white;
+            padding: 10px;
+            border: 1px solid var(--mint);
+            font-style: italic;
+            border-radius: 4px;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding: 40px;
+            background: var(--forest-dark);
+            color: white;
+            border-radius: var(--radius);
+        }
+
+        .btn-dl {
+            background: var(--emerald);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo"><i class="fas fa-leaf"></i></div>
+        <h1>Comprehensive HTML Reference</h1>
+        <p>A Multi-Shade Green Directory of Text Formatting Elements</p>
+    </header>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th width="15%">Tag</th>
+                    <th width="45%">Description</th>
+                    <th width="40%">Visual Example</th>
+                </tr>
+            </thead>
+            <tbody id="tag-body">
+                <tr><td><span class="tag-pill">&lt;b&gt;</span></td><td>Bold text without semantic importance.</td><td><div class="example-box"><b>Bolded Text</b></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;strong&gt;</span></td><td>Important text (Bold).</td><td><div class="example-box"><strong>Strong Text</strong></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;i&gt;</span></td><td>Italic text for technical terms/thoughts.</td><td><div class="example-box"><i>Italicized Text</i></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;em&gt;</span></td><td>Emphasized text (Italic).</td><td><div class="example-box"><em>Emphasized Text</em></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;mark&gt;</span></td><td>Highlighted background text.</td><td><div class="example-box"><mark>Highlighted</mark></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;small&gt;</span></td><td>Smaller side comments or fine print.</td><td><div class="example-box"><small>Fine print text</small></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;del&gt;</span></td><td>Deleted/Removed text (Strikethrough).</td><td><div class="example-box"><del>Old Price</del></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;ins&gt;</span></td><td>Inserted/Added text (Underline).</td><td><div class="example-box"><ins>New Price</ins></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;sub&gt;</span></td><td>Subscript text.</td><td><div class="example-box">H<sub>2</sub>O</div></td></tr>
+                <tr><td><span class="tag-pill">&lt;sup&gt;</span></td><td>Superscript text.</td><td><div class="example-box">A<sup>2</sup> + B<sup>2</sup></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;code&gt;</span></td><td>Inline code fragment.</td><td><div class="example-box"><code>npm install</code></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;kbd&gt;</span></td><td>Keyboard input display.</td><td><div class="example-box"><kbd>Ctrl</kbd> + <kbd>C</kbd></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;samp&gt;</span></td><td>Sample output from a computer.</td><td><div class="example-box"><samp>Error 404</samp></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;var&gt;</span></td><td>Mathematical variable.</td><td><div class="example-box"><var>x</var> = <var>y</var> + 2</div></td></tr>
+                <tr><td><span class="tag-pill">&lt;dfn&gt;</span></td><td>Definition term.</td><td><div class="example-box"><dfn>HTML</dfn> is a language.</div></td></tr>
+                <tr><td><span class="tag-pill">&lt;abbr&gt;</span></td><td>Abbreviation (hover to see title).</td><td><div class="example-box"><abbr title="World Health Org">WHO</abbr></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;cite&gt;</span></td><td>Citation for work titles.</td><td><div class="example-box"><cite>The Mona Lisa</cite></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;q&gt;</span></td><td>Short inline quotation.</td><td><div class="example-box"><q>To be or not to be</q></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;blockquote&gt;</span></td><td>Large section of quoted text.</td><td><div class="example-box"><blockquote>Stay Hungry, Stay Foolish</blockquote></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;address&gt;</span></td><td>Contact information.</td><td><div class="example-box"><address>Main St, NY</address></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;pre&gt;</span></td><td>Preformatted text (preserves space).</td><td><div class="example-box"><pre>Space   Preserved</pre></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;time&gt;</span></td><td>Machine-readable time.</td><td><div class="example-box"><time>2026-01-05</time></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;s&gt;</span></td><td>Strikethrough (no longer accurate).</td><td><div class="example-box"><s>Sold Out</s></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;u&gt;</span></td><td>Unarticulated annotation (Underline).</td><td><div class="example-box"><u>Misspelled</u></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;br&gt;</span></td><td>Line break (No overlap).</td><td><div class="example-box">Row A<br>Row B</div></td></tr>
+                <tr><td><span class="tag-pill">&lt;wbr&gt;</span></td><td>Word break opportunity.</td><td><div class="example-box">Very<wbr>Long<wbr>Word</div></td></tr>
+                <tr><td><span class="tag-pill">&lt;ruby&gt;</span></td><td>East Asian typography annotation.</td><td><div class="example-box"><ruby>漢 <rt>Kan</rt></ruby></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;data&gt;</span></td><td>Links content to machine-readable value.</td><td><div class="example-box"><data value="2101">Product ID</data></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;bdo&gt;</span></td><td>Bi-directional Override.</td><td><div class="example-box"><bdo dir="rtl">This text is reversed</bdo></div></td></tr>
+                <tr><td><span class="tag-pill">&lt;span&gt;</span></td><td>Generic inline styler.</td><td><div class="example-box"><span style="color:var(--leaf)">Styled Span</span></div></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <button class="btn-dl" onclick="dlSheet()">
+            <i class="fas fa-file-pdf"></i> DOWNLOAD FULL CHEAT SHEET (.TXT)
+        </button>
+        <p style="margin-top: 15px; opacity: 0.6;">© 2026 Web Development Lab - Assignment 01</p>
+    </footer>
+</div>
+
+<script>
+    function dlSheet() {
+        let text = "HTML FORMATTING CHEAT SHEET (GREEN EDITION)\n" + "=".repeat(45) + "\n";
+        document.querySelectorAll('tbody tr').forEach(row => {
+            const tag = row.cells[0].innerText;
+            const desc = row.cells[1].innerText;
+            text += `${tag.padEnd(10)} : ${desc}\n`;
+        });
+        const blob = new Blob([text], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'html_formatting_tags.txt';
+        a.click();
+    }
+</script>
+</body>
+</html>
